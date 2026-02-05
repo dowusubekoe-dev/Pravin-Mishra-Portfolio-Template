@@ -602,13 +602,30 @@
       <div class="footer-bottom">
         <p>© <span id="year"></span> Pravin Mishra. All rights reserved.</p>
         <p>Crafted with <span>cloud</span> excellence by Pravin Mishra</p>
-        <p><span>Pravin Mishra Portfolio v1.0</span> -- Deployed on <span>4/2/2026</span> -- By <span>Derek Owusu Bekoe</span></p>
+        <p><span>Pravin Mishra Portfolio v1.0</span> -- Deployed on <span id="deployDate"></span> -- By <span>Derek Owusu Bekoe</span></p>
       </div>
 
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
+   <script>
+  function formatDeployDate() {
+    const date = new Date();
+    
+    // Options to get the "DD Mon YYYY" format
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    
+    // Formats date to: "04 Feb 2026"
+    const formattedDate = date.toLocaleDateString('en-GB', options);
+    
+    // Inject into the HTML element
+    document.getElementById('deployDate').textContent = formattedDate;
+  }
 
+  // Run the function when the page loads
+  window.onload = formatDeployDate;
+</script>
 
 </body>
 
